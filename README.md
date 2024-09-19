@@ -47,7 +47,7 @@ DB_PASSWORD=
 6. Crear enlace simbólico a la carpeta storage.
     ```sh
     php artisan storage:link
-    ``
+    ```
 7. Ejecutar las migraciones y seeders:
     ```sh
     php artisan migrate --seed
