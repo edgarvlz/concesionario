@@ -1,66 +1,114 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+# Concesionario de Automóviles
+
+
+## Tecnologías Utilizadas
+
+- ![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?logo=laravel&logoColor=white)
+- ![Livewire](https://img.shields.io/badge/Livewire-3-4E56A6?logo=laravel&logoColor=white)
+- ![Node](https://img.shields.io/badge/Node.js-20.11.0-339933?logo=node.js&logoColor=white)
+- ![PHP](https://img.shields.io/badge/PHP-8.2.15-777BB4?logo=php&logoColor=white)
+
+## Instrucciones para Levantar el Proyecto
+
+1. Clonar el repositorio:
+    ```sh
+    git clone https://github.com/edgarvlz/concesionario.git
+    ```
+
+2. Entrar a la carpeta del proyecto:
+    ```sh
+    cd concesionario
+    ```
+
+3. Instalar las dependencias:
+    ```sh
+    composer install && npm install
+    ```
+
+4. Copiar las variables de entorno:
+    ```sh
+    cp .env.example .env
+    ```
+### Configuracion de la Base de datos en el archivo .env
+
+debera ubicar las siguientes lineas y agregar el usuario y la clave de la Base de datos Postgres donde previamente debera haber creado una base de datos de nombre 'concesionario'
+```sh
+DB_DATABASE=concesionario
+DB_USERNAME=
+DB_PASSWORD=
+```
+    
+
+5. Generar la clave de la aplicación:
+    ```sh
+    php artisan key:generate
+    ```
+
+6. Configurar y crear una base de datos según el `.env`.
+
+7. Ejecutar las migraciones y seeders:
+    ```sh
+    php artisan migrate --seed
+    ```
+
+8. Iniciar el servidor:
+    ```sh
+    php artisan serve
+    ```
+
+## Datos Iniciales del Proyecto
+
+Si ejecutaste el comando:
+```sh
+php artisan migrate --seed
+```
+Contarás con toda la información necesaria para loguearte como administrador, con el siguiente usuario:
+
+- **Username:** `admin`
+- **Clave:** `password`
+
+### Uso de Factories
+
+Adicionalmente, se puede hacer uso de los factories según convenga. Para esto, abre Tinker desde la terminal:
+```sh
+php artisan tinker
+```
+
+Una vez dentro, puedes ejecutar el factory que necesites (en caso de no existir uno, por favor créalo). Por ejemplo:
+```php
+Proveedor::factory()->create()
+```
+
+Este comando genera un proveedor, sus datos bancarios y su contacto (este puede o no tener un usuario en el sistema).
+
+## P.S.
+
+Ten en cuenta las prácticas realizadas en el proyecto, el cual se basa enteramente en la arquitectura de componentes de Livewire, y la permisología de Laravel Spatie. Conocer dichas tecnologías es **OBLIGATORIO**. A su vez, es importante mantener la estructura de carpetas y el nombramiento de archivos.
+
+## Documentación
+
+- [Laravel](https://laravel.com/docs/10.x)
+- [Livewire](https://livewire.laravel.com/docs/quickstart)
+- [Node.js](https://nodejs.org/en/docs/)
+- [PHP](https://www.php.net/docs.php)
+- [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission/v6/introduction)
+
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://laravel.com" target="_blank">
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white">
+  </a>
+  <a href="https://livewire.laravel.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Livewire-4E56A6?style=for-the-badge&logo=laravel&logoColor=white">
+  </a>
+  <a href="https://nodejs.org" target="_blank">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
+  </a>
+  <a href="https://www.php.net" target="_blank">
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white">
+  </a>
+  <a href="https://spatie.be/" target="_blank">
+    <img src="https://img.shields.io/badge/Spatie-4A4A4A?style=for-the-badge&logo=spatie&logoColor=white" />
+  </a>
 </p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
