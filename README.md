@@ -6,8 +6,6 @@
 ## Tecnologías Utilizadas
 
 - ![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?logo=laravel&logoColor=white)
-- ![Livewire](https://img.shields.io/badge/Livewire-3-4E56A6?logo=laravel&logoColor=white)
-- ![Node](https://img.shields.io/badge/Node.js-20.11.0-339933?logo=node.js&logoColor=white)
 - ![PHP](https://img.shields.io/badge/PHP-8.2.15-777BB4?logo=php&logoColor=white)
 
 ## Instrucciones para Levantar el Proyecto
