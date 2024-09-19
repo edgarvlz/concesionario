@@ -31,9 +31,9 @@
     ```sh
     cp .env.example .env
     ```
-### Configuracion de la Base de datos en el archivo .env
+### Configuración de la Base de datos en el archivo .env
 
-debera ubicar las siguientes lineas y agregar el usuario y la clave de la Base de datos Postgres donde previamente debera haber creado una base de datos de nombre 'concesionario'
+Deberá ubicar las siguientes líneas y agregar el usuario y la clave de la Base de datos Postgres donde previamente deberá haber creado una base de datos de nombre 'concesionario'
 ```sh
 DB_DATABASE=concesionario
 DB_USERNAME=
@@ -46,8 +46,10 @@ DB_PASSWORD=
     php artisan key:generate
     ```
 
-6. Configurar y crear una base de datos según el `.env`.
-
+6. Crear enlace simbólico a la carpeta storage.
+    ```sh
+    php artisan storage:link
+    ``
 7. Ejecutar las migraciones y seeders:
     ```sh
     php artisan migrate --seed
@@ -55,60 +57,35 @@ DB_PASSWORD=
 
 8. Iniciar el servidor:
     ```sh
+    npm run dev
+    ```
+    
+    ```sh
     php artisan serve
     ```
-
 ## Datos Iniciales del Proyecto
 
 Si ejecutaste el comando:
 ```sh
 php artisan migrate --seed
 ```
-Contarás con toda la información necesaria para loguearte como administrador, con el siguiente usuario:
+Contarás con toda la información necesaria para loguearte con los siguientes usuarios:
 
-- **Username:** `admin`
-- **Clave:** `password`
+- **Correo:** `admin@demo.com`
+- **Clave:** `password123`
 
-### Uso de Factories
+- **Correo:** `jane@demo.com`
+- **Clave:** `password123`
 
-Adicionalmente, se puede hacer uso de los factories según convenga. Para esto, abre Tinker desde la terminal:
-```sh
-php artisan tinker
-```
+- **Correo:** `sam@demo.com`
+- **Clave:** `password123`
 
-Una vez dentro, puedes ejecutar el factory que necesites (en caso de no existir uno, por favor créalo). Por ejemplo:
-```php
-Proveedor::factory()->create()
-```
+Donde el usuario sam@demo.com, todos los usuarios nuevos que se registren no contaran con los permisos necesarios  para eliminar registros 
 
-Este comando genera un proveedor, sus datos bancarios y su contacto (este puede o no tener un usuario en el sistema).
 
-## P.S.
-
-Ten en cuenta las prácticas realizadas en el proyecto, el cual se basa enteramente en la arquitectura de componentes de Livewire, y la permisología de Laravel Spatie. Conocer dichas tecnologías es **OBLIGATORIO**. A su vez, es importante mantener la estructura de carpetas y el nombramiento de archivos.
 
 ## Documentación
 
 - [Laravel](https://laravel.com/docs/10.x)
-- [Livewire](https://livewire.laravel.com/docs/quickstart)
-- [Node.js](https://nodejs.org/en/docs/)
 - [PHP](https://www.php.net/docs.php)
-- [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission/v6/introduction)
 
-<p align="center">
-  <a href="https://laravel.com" target="_blank">
-    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white">
-  </a>
-  <a href="https://livewire.laravel.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Livewire-4E56A6?style=for-the-badge&logo=laravel&logoColor=white">
-  </a>
-  <a href="https://nodejs.org" target="_blank">
-    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
-  </a>
-  <a href="https://www.php.net" target="_blank">
-    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white">
-  </a>
-  <a href="https://spatie.be/" target="_blank">
-    <img src="https://img.shields.io/badge/Spatie-4A4A4A?style=for-the-badge&logo=spatie&logoColor=white" />
-  </a>
-</p>
