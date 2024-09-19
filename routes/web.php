@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -22,5 +23,21 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
+
+Route::middleware(['auth'])->group(function () {
+    //listar
+    Route::get('/', [CarroController::class, 'index'])->name('carros.index');
+
+    // crear
+    Route::get('/carros/create', [CarroController::class, 'create'])->name('carros.create');
+    Route::post('/carros', [CarroController::class, 'store'])->name('carros.store');
+
+    //editar
+    Route::get('/carros/{carro}/edit', [CarroController::class, 'edit'])->name('carros.edit');
+    Route::put('/carros/{carro}', [CarroController::class, 'update'])->name('carros.update');
+
+    //eliminar
+    Route::delete('/carros/{carro}', [CarroController::class, 'destroy'])->name('carros.destroy')->middleware('eliminar');;
+});
 
 require __DIR__.'/auth.php';
