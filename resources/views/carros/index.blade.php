@@ -40,7 +40,7 @@
                                             Editar
                                         </a>
 
-                                        {{-- @if (auth()->user()->eliminar) --}}
+                                        @if (auth()->user()->eliminar)
                                             <form action="{{ route('carros.destroy', $carro->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este registro?');">
                                                 @csrf
                                                 @method('DELETE')
@@ -48,7 +48,7 @@
                                                     Eliminar
                                                 </button>
                                             </form>
-                                        {{-- @endif --}}
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
